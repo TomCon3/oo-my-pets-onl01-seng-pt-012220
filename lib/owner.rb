@@ -10,6 +10,8 @@ class Owner
     @name = name
     @species = "human"
     @@all << self
+    @pets << Dog.all
+    @pets << Cat.all
     @say_species = "I am a #{@species}."
   end
   
@@ -58,8 +60,12 @@ class Owner
   end
   
   def sell_pets
-    Dog.all.clear
-    Cat.all.clear
+    @pets.collect do |species, instances|
+      instances.each do |pet|
+        pet.mood = "nervous"
+      end
+      instances.clear
+    end
   end
   
  
