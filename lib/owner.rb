@@ -65,7 +65,6 @@ class Owner
     Dog.reset_all
   end
   
-  def list_pets
-    
+ 
   
 end
