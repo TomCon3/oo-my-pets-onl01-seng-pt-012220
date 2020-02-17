@@ -66,7 +66,7 @@ class Owner
   end
   
   def list_pets
-    @@pets
+    @@pets.select |pet| pet.owner==self}
   end
   
 end
