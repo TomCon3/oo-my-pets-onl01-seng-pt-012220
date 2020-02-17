@@ -10,8 +10,6 @@ class Owner
     @name = name
     @species = "human"
     @@all << self
-    @pets << Cat.all
-    @pets << Dog.all
     @say_species = "I am a #{@species}."
   end
   
@@ -64,8 +62,5 @@ class Owner
     Dog.reset_all
   end
   
-  def list_pets
-    @@pets.select {|pet| pet.owner==self}
-  end
-  
+ 
 end
