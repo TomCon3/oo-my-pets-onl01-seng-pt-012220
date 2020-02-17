@@ -58,8 +58,8 @@ class Owner
   end
   
   def sell_pets
-    self.reset_all
-    self.reset_all
+    Dog.reset_all
+    Cat.reset_all
   end
   
  
