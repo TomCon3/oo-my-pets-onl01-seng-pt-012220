@@ -5,14 +5,15 @@ class Owner
   attr_accessor :pets
   
   @@all = []
-  
+  @@pets = []
   
   def initialize(name)
     @name = name
     @species = "human"
     @@all << self
+    @@pets << Cat.all
+    @@pets << Dog.all
     @say_species = "I am a #{@species}."
-    @pets = {:cats => [], :dogs => []}
   end
   
   def self.species
@@ -59,5 +60,12 @@ class Owner
     Cat.all.select {|cat| cat.mood = "happy"}
   end
   
+  def sell_pets
+    Cat.reset_all
+    Dog.reset_all
+  end
+  
+  def list_pets
+    
   
 end
